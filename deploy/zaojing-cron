@@ -1,0 +1,8 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# User inputs and generated images are retained for at most 24 hours.
+*/30 * * * * root /opt/zaojing/deploy/cleanup-expired-files.sh >> /var/log/zaojing-cleanup.log 2>&1
+
+# Keep seven days of local database backups. OSS off-site backup is a later step.
+17 3 * * * root /opt/zaojing/deploy/backup-postgres.sh >> /var/log/zaojing-backup.log 2>&1

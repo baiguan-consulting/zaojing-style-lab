@@ -1,0 +1,14 @@
+.git
+.next
+node_modules
+npm-debug.log*
+.env*
+!.env.example
+data/generated-images
+data/temporary-uploads
+data/payments.json
+public/uploads
+storage
+coverage
+*.tsbuildinfo
+
